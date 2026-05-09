@@ -124,28 +124,34 @@ nav a.active { color: var(--navy); font-weight: 600; }
 .officer-committees { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
 .committee-tag { font-size: 11px; font-weight: 600; background: var(--gold-pale); color: var(--gold-deep); padding: 4px 12px; border-radius: 50px; }
 
-/* BOARD GRID */
+/* BOARD SECTION */
 .board-section { padding: 0 40px 80px; background: white; }
 .board-inner { max-width: 1200px; margin: 0 auto; }
 .board-divider { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
 .board-divider-line { flex: 1; height: 1px; background: var(--gray-border); }
 .board-divider-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-mid); }
-.board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+/* BOARD GRID — vertical like officers */
+.board-grid { display: flex; flex-direction: column; gap: 24px; }
 .board-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
   border: 1px solid var(--gray-border);
   border-radius: 16px;
   overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
-.board-card:hover { box-shadow: 0 8px 28px rgba(30,42,94,0.1); transform: translateY(-2px); border-color: var(--gold-bright); }
+.board-card:hover { box-shadow: 0 8px 28px rgba(30,42,94,0.1); border-color: var(--gold-bright); }
 .board-photo {
-  width: 100%;
-  height: 200px;
+  width: 200px;
+  height: 220px;
   object-fit: cover;
   object-position: center 15%;
   display: block;
+  flex-shrink: 0;
 }
-.board-body { padding: 20px 22px 22px; }
+.board-body { padding: 22px 28px; display: flex; flex-direction: column; justify-content: center; }
 .board-role { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 4px; }
 .board-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
 .board-biz { font-size: 12.5px; color: var(--gray-mid); margin-bottom: 12px; }
@@ -319,7 +325,7 @@ footer { background: var(--navy-dark); padding: 32px 40px; }
 
       <!-- JEFF -->
       <div class="board-card">
-        <img src="jeff_kyle.JPG" alt="Jeff Kyle" class="board-photo">
+        <img src="jeff_kyle.jpg" alt="Jeff Kyle" class="board-photo">
         <div class="board-body">
           <div class="board-role">Board Member</div>
           <div class="board-name">Jeff Kyle</div>
